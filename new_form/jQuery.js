@@ -63,21 +63,26 @@ function ispasswordMatch(p1,p2) {
         showError(p2, "do not match")
     }
 }
+
+function constructMessage(formData) {
+    let message = "Information:\n";
+    message += `First Name: ${formData.first_name}\n`;
+    message += `Last Name: ${formData.last_name}\n`;
+    message += `Email: ${formData.email}\n`;
+    message += `Phone Number: ${formData.phone_number}\n`;
+    return message;
+}
+
 // add event listener
-
 form.addEventListener('submit', function (e) {
-    
-    e.preventDefault()
+    e.preventDefault();
 
-    checkRequired([first_name,last_name,email,phone_number,password,confirm_password])
-
-    checkLength(first_name, 2, 25)
-    checkLength(password, 6, 20)
-    checkLength(phone_number, 10, 11)
-
-    checkEmail(email)
-
-    ispasswordMatch(password, confirm_password)
+    checkRequired([first_name, last_name, email, phone_number, password, confirm_password]);
+    checkLength(first_name, 2, 25);
+    checkLength(password, 6, 20);
+    checkLength(phone_number, 10, 11);
+    checkEmail(email);
+    ispasswordMatch(password, confirm_password);
 
     const allInputsValid = document.querySelectorAll('.form-control.success').length === 6;
     if (allInputsValid) {
@@ -88,10 +93,14 @@ form.addEventListener('submit', function (e) {
             phone_number: phone_number.value
         };
 
-        const queryString = Object.keys(formData).map(key => key + '=' + encodeURIComponent(formData[key])).join('&');
+        // message
+        const message = constructMessage(formData);
 
+        // message in alert
+        alert(message);
+        
+        const queryString = Object.keys(formData).map(key => key + '=' + encodeURIComponent(formData[key])).join('&');
         window.location.href = 'sayfa2.html?' + queryString;
     }
-
-})
+});
 
