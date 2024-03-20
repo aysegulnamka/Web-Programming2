@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background-color: lightcyan;
+}
+
+.information{
+    background-color: aliceblue;
+    width: 450px;
+    height: 300px;
+    border: 2px solid rgb(125, 124, 124);
+    border-radius: 20px;
+}
+
+.information h1{
+    text-align: center;
+    position: relative;
+    font-size: 36px;
+}
+
+.information .output{
+    margin-left: 100px;
+}

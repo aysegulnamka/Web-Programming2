@@ -1,0 +1,99 @@
+:root{
+    --success: #a7ff83;
+    --error: #fc5185;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150vh;
+    background: url(manz.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    width: 450px;
+    height: 700px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 30px 40px;
+}
+
+.container h1{
+    text-align: center;
+    position: relative;
+    font-size: 36px;
+    color: #fffefe;
+}
+
+.form-control{
+    background-color: transparent;
+    border: none;
+}
+
+.form-control input{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #dad8d8;
+    border-radius: 40px;
+    font-size: 16px;
+    padding: 15px 35px 15px 15px;
+    display: block;
+    background-color: transparent;
+}
+
+.form-control input::placeholder{
+    color: #fffefe;
+}
+
+.form-control input:focus{
+    border-color: #777;
+}
+
+.form-control.success input{
+    border-color: var(--success);
+}
+
+.form-control.error input{
+    border-color: var(--error);
+}
+
+.form-control small{
+    color: var(--error);
+    position: absolute;
+    visibility: hidden;
+    margin-left: 5%;
+}
+
+.form-control.error small{
+    visibility: visible;
+    position: initial;
+}
+
+.container .btn{
+    width: 150px;
+    height: 35px;
+    position: relative;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 20px;
+    top: 15px;
+    font-size: 20px;
+    font-weight: 400;
+    background: transparent;
+    color: #fffefe;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.container .btn:hover{
+    background-color: black;
+}
